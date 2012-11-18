@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>HTMl to JS, string</title>
+</head>
+<body>
+<textarea name="input" id="input" cols="30" rows="10">
+  
+<p>Sunswift is a student-led solar racing team from UNSW. Founded in 1996, this year's team has more than 40 members from Engineering, Science, Business and Arts. Sunswift gives students at UNSW a chance to get some hands-on experience in a range of different industries; from industrial design, to systems engineering and even business. It is a chance for students to meet and work with people from all different study areas, as well as people within their chosen industries.</p>
+
+<p>Project manager <a href="http://www.sunswift.com/2012/07/08/introducing-sam-paterson-project-manager/">Sam Paterson</a> and associate project manager <a href="http://www.sunswift.com/2012/10/02/introducing-ulrika-lobo-associate-project-manager/">Ulrika Lobo</a> are confident that no matter how well the team does in the World Solar Challenge 2013, team members will be able to take much more away from their time at Susnwift.</p>
+
+<p>Please find more information about previous Sunswift teams at <a href="http://www.sunswift.com/about/us/">http://www.sunswift.com/about/us/</a>
+
+</textarea>
+<input id="submit" type="submit" value="Convert"><br>
+
+<textarea id="output" rows='10' cols=100></textarea>
+<script type="text/javascript">
+  document.getElementById('submit').onclick = function() {
+    // console.log('k');
+    var input=document.getElementById('input');
+    console.log(input);
+    input = input.innerHTML;
+    // input = input.replace('Sun','Moon')
+    input = input.replace(/(\r\n|\n|\r)\s*/gm," ")
+    input = input.replace(/"/g,"\\\"")
+    // input = input.replace('\n','')
+    document.getElementById('output').innerHTML = input;
+    document.getElementById('output').select();
+  };
+  document.getElementById('submit').click();
+</script>
+
+
+</body>
+</html>
